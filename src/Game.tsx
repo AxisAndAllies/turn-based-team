@@ -1,7 +1,28 @@
 import { INVALID_MOVE } from "boardgame.io/core";
+import { Game, Move } from "boardgame.io";
 
-export const TicTacToe = {
-  setup: () => ({ cells: Array(400).fill(null) }),
+import board1 from "../data/board1";
+
+function setupCells() {
+  // boards are created in a spreadsheet + exported as CSV
+  // only 20x20 boards supported for now
+  let arr = board1.split("\n").map((e) => e.split(","));
+  let result = [];
+  for (let row of arr) {
+    // reverse to make it symmetric
+    result = result.concat(row.slice(0, 10)).concat(row.slice(0, 10).reverse());
+  }
+  console.log(result);
+  return result;
+}
+
+export interface MyGameState {
+  // aka 'G', your game's state
+  cells: any[];
+}
+
+export const TicTacToe: Game<MyGameState> = {
+  setup: () => ({ cells: setupCells() }),
 
   turn: {
     minMoves: 1,
