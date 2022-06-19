@@ -1,7 +1,7 @@
 import { INVALID_MOVE } from "boardgame.io/core";
 
 export const TicTacToe = {
-  setup: () => ({ cells: Array(9).fill(null) }),
+  setup: () => ({ cells: Array(400).fill(null) }),
 
   turn: {
     minMoves: 1,
