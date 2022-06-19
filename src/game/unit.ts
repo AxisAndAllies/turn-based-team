@@ -47,4 +47,8 @@ export class Unit {
   equip() {
     // equip costs 1 AP
   }
+
+  vaultOver(cell) {
+    // costs some MP or AP? only if light gear
+  }
 }

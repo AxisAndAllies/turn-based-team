@@ -2,7 +2,8 @@
 // frag grenade
 // pistol
 // smg
+// shotgun
 // battle rifle
 // sniper rifle
-// assault rifle
+// assault riflea
 // machine gun
